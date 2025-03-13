@@ -21,9 +21,9 @@ while True:
         adc = mcp3008.MCP3008()
         light = adc.read([mcp3008.CH0])  #light
         if light > 1000:   #threshold
-            string = f"Raw: {light}, is Bright\n"
+            string = f"Raw: " +light+ ", is Bright\n"
         else:
-            string = f"Raw: {light}, is Dim\n"
+            string = f"Raw: " +light+ ", is Dim\n"
 
         print(string)
         adc.close()
@@ -41,8 +41,8 @@ while True:
     while count >= 50:
         adc = mcp3008.MCP3008()
         sound = adc.read([mcp3008.CH1])  #sound
-        string = f"Raw: {sound}\n"
-        
+        string = "Raw: " + sound + "\n"
+
         if sound > 1000: #threshold
 
             GPIO.ouput(LED_channel, GPIO.HIGH)
