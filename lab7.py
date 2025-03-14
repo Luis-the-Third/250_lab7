@@ -32,12 +32,12 @@ while True:
         adc.close()
         time.sleep(0.100)   # 100 ms
         count += 1
-        if count % 5 == 0:
+        if count % 5 == 0 and count <= 25:
             if on:
-                GPIO.ouput(LED_channel, GPIO.LOW)
+                GPIO.output(LED_channel, GPIO.LOW)
                 on = False
             else:
-                GPIO.ouput(LED_channel, GPIO.HIGH)
+                GPIO.output(LED_channel, GPIO.HIGH)
                 on = True
     
     count = 0
@@ -48,20 +48,20 @@ while True:
 
         if sound > 1000: #threshold
 
-            GPIO.ouput(LED_channel, GPIO.HIGH)
+            GPIO.output(LED_channel, GPIO.HIGH)
             time.sleep(0.100)
-            GPIO.ouput(LED_channel, GPIO.LOW)
+            GPIO.output(LED_channel, GPIO.LOW)
 
         print(string)
         adc.close()
         time.sleep(0.100)   # 100 ms
         count += 1
-        if count % 5 == 0:
+        if count % 2 == 0 and count <= 8:
             if on:
-                GPIO.ouput(LED_channel, GPIO.LOW)
+                GPIO.output(LED_channel, GPIO.LOW)
                 on = False
             else:
-                GPIO.ouput(LED_channel, GPIO.HIGH)
+                GPIO.output(LED_channel, GPIO.HIGH)
                 on = True
     count = 0
 
