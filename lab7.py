@@ -19,7 +19,7 @@ on = False
 
 while True:
     print("Testing Light")
-    while count >= 50:
+    while count <= 50:
         print("Working Count: " + count)
         adc = mcp3008.MCP3008()
         light = adc.read([mcp3008.CH0])  #light
@@ -41,7 +41,7 @@ while True:
                 on = True
     
     count = 0
-    while count >= 50:
+    while count <= 50:
         adc = mcp3008.MCP3008()
         sound = adc.read([mcp3008.CH1])  #sound
         string = "Raw: " + sound
