@@ -22,7 +22,7 @@ while True:
     while count <= 50:
         adc = mcp3008.MCP3008()
         light = adc.read([mcp3008.CH0])  #light
-        if int(light[0]) > 20:   #threshold
+        if int(light[0]) > 50:   #threshold
             string = "Raw: " +str(light)+ ", is Bright"
         else:
             string = "Raw: " +str(light)+ ", is Dim"
@@ -31,7 +31,7 @@ while True:
         adc.close()
         time.sleep(0.100)   # 100 ms
         count += 1
-        if count % 5 == 0 and count <= 25:
+        if count % 5 == 0:
             if on:
                 GPIO.output(LED_channel, GPIO.LOW)
                 on = False
