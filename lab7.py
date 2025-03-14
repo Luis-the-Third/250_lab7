@@ -55,7 +55,7 @@ while True:
         adc.close()
         time.sleep(0.100)   # 100 ms
         count += 1
-        if count % 2 == 0 and count <= 8:
+        if count % 2 == 0 and count <= 16:
             if on:
                 GPIO.output(LED_channel, GPIO.LOW)
                 on = False
