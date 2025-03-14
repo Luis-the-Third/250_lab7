@@ -6,7 +6,7 @@ import mcp3008
 
 LED_channel = 0
 
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BOARD)
 GPIO.setup(LED_channel, GPIO.OUT)
 
 # Initialize values before starting main loop
@@ -63,5 +63,3 @@ while True:
                 on = True
     count = 0
 
-
-    
