@@ -5,7 +5,7 @@ import mcp3008
 
 
 LED_channel = 11
-
+# Change
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(LED_channel, GPIO.OUT)
 
